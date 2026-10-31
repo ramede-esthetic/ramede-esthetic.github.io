@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js-motion .reveal:not(.visible){opacity:1;transform:none}}
 
 .care-video{display:block;width:100%;height:auto;aspect-ratio:4/4.5;object-fit:cover;object-position:center 50%;background:#d3c9be}.motion-poster{display:none!important}@media(max-width:700px){.care-video{aspect-ratio:3/4}}@media(prefers-reduced-motion:reduce){.care-video{display:none}.motion-poster{display:block!important}}
+
+.director-photo img{object-position:50% 30%}@media(max-width:700px){.director-photo{aspect-ratio:4/5}.director-photo img{object-position:50% 25%}}
