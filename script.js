@@ -14,5 +14,5 @@ const videos=[...document.querySelectorAll('video')];
 const videoObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>entries.forEach(entry=>{if(motion.matches||!entry.isIntersecting)entry.target.pause();else entry.target.play().catch(()=>{});}),{threshold:.1}):null;
 function syncMotion(){if(motion.matches)document.documentElement.classList.remove('js-motion');videos.forEach(v=>{v.muted=true;if(motion.matches){v.pause();v.removeAttribute('autoplay');}else{v.setAttribute('autoplay','');if(v.getBoundingClientRect().bottom>0&&v.getBoundingClientRect().top<innerHeight)v.play().catch(()=>{});}});}
 videos.forEach(v=>videoObserver?.observe(v));syncMotion();motion.addEventListener('change',syncMotion);
-document.querySelectorAll('[data-open-program]').forEach(a=>a.addEventListener('click',()=>{const panel=document.getElementById(a.dataset.openProgram);if(panel)panel.open=true;}));
+document.querySelectorAll('[data-open-program]').forEach(a=>a.addEventListener('click',()=>{const panel=document.getElementById(a.dataset.openProgram);if(panel&&panel.tagName==='DETAILS')panel.open=true;}));
 if('IntersectionObserver' in window){const headerObserver=new IntersectionObserver(entries=>{header.classList.toggle('scrolled',!entries[0].isIntersecting);},{threshold:0});headerObserver.observe(document.querySelector('.hero'));}
