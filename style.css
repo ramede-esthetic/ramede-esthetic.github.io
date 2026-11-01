@@ -28,3 +28,8 @@
 /* Faster facts entrance and count-up. */
 .facts.fact-motion .fact-item{transition-duration:.4s,.5s;transition-delay:calc(var(--fact-order)*.08s)}.facts.fact-motion .fact-item>p{transition-duration:.35s,.45s;transition-delay:calc(var(--fact-order)*.08s + .08s)}.facts.fact-motion .fact-value{transition-duration:.5s,.5s;transition-delay:calc(var(--fact-order)*.08s + .02s)}
 .js-motion .reveal{transition-duration:.55s,.6s}
+
+/* Preserve the full original frames in the Balance photo pair. */
+.balance-photos{height:auto;grid-template-columns:.95fr 1.05fr;align-items:center}
+.balance-photos img{height:auto;object-fit:contain;object-position:center}
+@media(max-width:760px){.balance-photos{height:auto;grid-template-columns:.95fr 1.05fr;gap:10px}}
