@@ -24,3 +24,7 @@
 @media(min-width:761px){.hero-center .scroll-cue{position:static;inset:auto;transform:none;display:flex;width:max-content;margin:32px auto 0;gap:12px}.hero-center .scroll-cue i{height:30px}.hero-center{top:50%;transform:translateY(-50%)}}
 @media(min-width:761px) and (max-height:760px){.hero-center{top:48%}.hero-center .scroll-cue{margin-top:26px;gap:9px}.hero-center .scroll-cue i{height:24px}.hero-wordmark{font-size:clamp(76px,7.5vw,102px)}.hero h1{margin-top:18px}.hero-center .outline-link{margin-top:15px}}
 @media(min-width:761px) and (max-height:650px){.hero-center{top:45%}.hero-wordmark{font-size:clamp(72px,7vw,88px)}}
+
+/* Faster facts entrance and count-up. */
+.facts.fact-motion .fact-item{transition-duration:.4s,.5s;transition-delay:calc(var(--fact-order)*.08s)}.facts.fact-motion .fact-item>p{transition-duration:.35s,.45s;transition-delay:calc(var(--fact-order)*.08s + .08s)}.facts.fact-motion .fact-value{transition-duration:.5s,.5s;transition-delay:calc(var(--fact-order)*.08s + .02s)}
+.js-motion .reveal{transition-duration:.55s,.6s}

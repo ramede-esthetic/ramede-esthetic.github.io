@@ -24,7 +24,7 @@ function enterFacts(){
  facts.classList.add('facts-visible');
  if(motion.matches){finishFacts();return;}
  cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent='0');
- const start=performance.now()+220,duration=1500;
+ const start=performance.now()+80,duration=650;
  function tick(now){const progress=Math.min(1,Math.max(0,(now-start)/duration));const eased=1-Math.pow(1-progress,2);factCounters.forEach(el=>el.textContent=String(Math.min(Number(el.dataset.countTo),Math.floor(eased*Number(el.dataset.countTo)))));if(progress<1&&factActive&&!motion.matches)factFrame=requestAnimationFrame(tick);else finishFacts();}
  factFrame=requestAnimationFrame(tick);
 }
