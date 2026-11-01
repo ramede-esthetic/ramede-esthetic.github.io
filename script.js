@@ -19,13 +19,14 @@ if('IntersectionObserver' in window){const headerObserver=new IntersectionObserv
 const facts=document.querySelector('.facts');
 const factCounters=[...facts.querySelectorAll('[data-count-to]')];
 let factFrame=0,factActive=false;
-function finishFacts(){cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent=el.dataset.countTo);}
+function formatFact(el,value){return el.dataset.countFormat?new Intl.NumberFormat(el.dataset.countFormat).format(value):String(value);}
+function finishFacts(){cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent=formatFact(el,Number(el.dataset.countTo)));}
 function enterFacts(){
  facts.classList.add('facts-visible');
  if(motion.matches){finishFacts();return;}
  cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent='0');
  const start=performance.now()+80,duration=650;
- function tick(now){const progress=Math.min(1,Math.max(0,(now-start)/duration));const eased=1-Math.pow(1-progress,2);factCounters.forEach(el=>el.textContent=String(Math.min(Number(el.dataset.countTo),Math.floor(eased*Number(el.dataset.countTo)))));if(progress<1&&factActive&&!motion.matches)factFrame=requestAnimationFrame(tick);else finishFacts();}
+ function tick(now){const progress=Math.min(1,Math.max(0,(now-start)/duration));const eased=1-Math.pow(1-progress,2);factCounters.forEach(el=>el.textContent=formatFact(el,Math.min(Number(el.dataset.countTo),Math.floor(eased*Number(el.dataset.countTo)))));if(progress<1&&factActive&&!motion.matches)factFrame=requestAnimationFrame(tick);else finishFacts();}
  factFrame=requestAnimationFrame(tick);
 }
 if('IntersectionObserver' in window){
