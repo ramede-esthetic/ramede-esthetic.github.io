@@ -39,3 +39,9 @@
 .balance-photos figure{min-width:0}
 .balance-photos video{width:100%;height:auto;object-fit:contain;aspect-ratio:9/16}
 @media(max-width:760px){.balance-photos{grid-template-columns:1fr 1fr}}
+
+/* Detail: original body care and supplied head spa photograph. */
+.detail-photo{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:12px;height:auto;aspect-ratio:auto;border-radius:0;overflow:visible}
+.detail-photo img{height:auto;object-fit:contain;object-position:center}
+.detail-photo img:last-child{border-radius:0 42px 0 0}
+@media(max-width:760px){.detail-photo{height:auto;aspect-ratio:auto;gap:10px;border-radius:0}.detail-photo img:last-child{border-radius:0 24px 0 0}}
