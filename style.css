@@ -53,3 +53,8 @@
 
 /* Focused care keeps prices and care menu side by side on phones. */
 @media(max-width:760px){.focused{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;align-items:start}.focused>div{min-width:0}.focused>div+div{margin-top:0;padding-top:0;border-top:0}.focused h3{font-size:18px;line-height:1.65;letter-spacing:-.045em}.focused h4{font-size:14px;line-height:1.6}.focused .small-label{font-size:9px;letter-spacing:.15em;margin-bottom:22px}.focused>div>p:not(.small-label){font-size:12px;line-height:1.95}.focused-price{margin-top:24px}.focused-price span{font-size:11px;margin-top:7px}.focused-price strong{font-size:clamp(16px,5vw,20px);line-height:1.5;margin-top:16px;white-space:nowrap}.focused small{font-size:10px;line-height:1.8}.focused>div>p+h4{margin-top:24px}}
+
+/* Balance video frames match the paired Detail photographs. */
+.balance-photos figure{aspect-ratio:828/1169;border-radius:0 42px 0 0;overflow:hidden}
+.balance-photos video,.balance-photos figure img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center}
+@media(max-width:760px){.balance-photos figure{border-radius:0 24px 0 0}}
