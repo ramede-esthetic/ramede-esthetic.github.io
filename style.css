@@ -20,3 +20,7 @@
 /* Keep the hero CTA and scroll cue in independent desktop columns. */
 @media(min-width:761px){.hero-center{inset:50% 12% auto;transform:translateY(-50%)}.scroll-cue{left:auto;right:3vw;bottom:105px;transform:none}.hero-event{bottom:105px;max-width:36%}}
 @media(min-width:761px) and (max-height:760px){.hero-center{top:48%}.hero-wordmark{font-size:clamp(80px,8vw,112px)}.hero-location{margin-bottom:15px}.hero-submark{margin-top:13px}.hero h1{margin-top:22px;margin-bottom:10px}.hero-center .outline-link{margin-top:18px}.hero-description{font-size:12px}}
+/* Keep SCROLL in normal flow below the consultation button. */
+@media(min-width:761px){.hero-center .scroll-cue{position:static;inset:auto;transform:none;display:flex;width:max-content;margin:32px auto 0;gap:12px}.hero-center .scroll-cue i{height:30px}.hero-center{top:50%;transform:translateY(-50%)}}
+@media(min-width:761px) and (max-height:760px){.hero-center{top:48%}.hero-center .scroll-cue{margin-top:26px;gap:9px}.hero-center .scroll-cue i{height:24px}.hero-wordmark{font-size:clamp(76px,7.5vw,102px)}.hero h1{margin-top:18px}.hero-center .outline-link{margin-top:15px}}
+@media(min-width:761px) and (max-height:650px){.hero-center{top:45%}.hero-wordmark{font-size:clamp(72px,7vw,88px)}}
