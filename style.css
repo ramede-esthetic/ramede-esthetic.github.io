@@ -45,3 +45,8 @@
 .detail-photo img{height:auto;object-fit:contain;object-position:center}
 .detail-photo img:last-child{border-radius:0 42px 0 0}
 @media(max-width:760px){.detail-photo{height:auto;aspect-ratio:auto;gap:10px;border-radius:0}.detail-photo img:last-child{border-radius:0 24px 0 0}}
+
+/* Matched Detail frames; supplied caption cropped from derived head spa image. */
+.detail-photo{align-items:start}
+.detail-photo img,.detail-photo img:last-child{width:100%;height:auto;aspect-ratio:828/1169;object-fit:cover;object-position:center;border-radius:0 42px 0 0}
+@media(max-width:760px){.detail-photo img,.detail-photo img:last-child{border-radius:0 24px 0 0}}
