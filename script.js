@@ -1,6 +1,4 @@
 'use strict';
-if('scrollRestoration' in history)history.scrollRestoration='manual';
-window.addEventListener('pageshow',()=>{if(!location.hash||performance.getEntriesByType('navigation')[0]?.type==='reload')window.scrollTo({top:0,behavior:'instant'});});
 const header=document.querySelector('.site-header'),menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#nav');
 function closeMenu(){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','메뉴 열기');nav.classList.remove('open');}
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');nav.classList.toggle('open',open);});
