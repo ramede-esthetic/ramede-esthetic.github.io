@@ -60,3 +60,29 @@
 @media(max-width:760px){.balance-photos figure{border-radius:0 24px 0 0}}
 
 .balance-photos figure video,.balance-photos figure img{border-radius:inherit}
+
+/* Owner feedback: readable copy and clear, arrow-free consultation buttons. */
+body{padding-bottom:94px}
+.site-header nav a{font-size:15px}
+.hero-description{font-size:16px}
+.outline-link,.hero .outline-link,.visit .outline-link{font-size:16px;padding:12px 25px;justify-content:center;gap:0;min-height:48px}
+.hero-event{font-size:15px}.hero-event small{font-size:13px}.hero-event>span{font-size:11px}
+.underlined{font-size:15px}.feature-copy>p:not(.section-no){font-size:17px}.feature-copy .subtle{font-size:15px!important}
+.films-heading>p:last-child{font-size:16px}.pill{font-size:14px;min-height:44px;gap:0}.film-note{font-size:13px}.film-top>span{font-size:11px}
+.program-item>p,.program-body>p{font-size:16px}.program-top{font-size:12px}.program-intro>span{font-size:14px}.price>span,.price small{font-size:14px}
+.focused>div>p:not(.small-label){font-size:16px}.focused-price span{font-size:15px}.focused h4{font-size:18px}.focused small{font-size:13px}
+.director-copy>p:not(.small-label){font-size:16px}.credentials{font-size:15px}.director-copy .underlined{font-size:15px}
+.hygiene-items p{font-size:15px}.faq-list summary{font-size:17px}.faq-list details p{font-size:16px}
+.visit-info{font-size:15px}.visit-info small{font-size:13px}footer p,footer small{font-size:13px}.social{font-size:13px}
+.fixed-bar{min-height:80px;gap:24px}.fixed-bar>a,.fixed-bar .fixed-primary{font-size:16px;min-height:48px;display:flex;align-items:center;justify-content:center}.fixed-bar>p{font-size:14px}
+.quick>button span{writing-mode:horizontal-tb;font-size:14px;letter-spacing:0}.quick>button{padding:18px 12px}.quick>div a{font-size:16px;min-height:44px}
+@media(max-width:760px){
+ body{padding-bottom:105px}.hero-description{font-size:15px}.hero .outline-link{font-size:15px;padding:12px 22px}.hero-event{font-size:13px}.hero-event small{font-size:12px}.hero-event>span{font-size:10px}
+ .feature-copy>p:not(.section-no){font-size:16px}.feature-copy .subtle{font-size:14px!important}.pill{font-size:13px;padding:9px 13px}.film-note{font-size:12px}.film-top>span{font-size:10px}
+ .program-item>p,.program-body>p{font-size:15px}.program-intro>span{font-size:13px}.program-top{font-size:11px}.price>span,.price small{font-size:13px}
+ .focused>div>p:not(.small-label){font-size:14px}.focused h4{font-size:16px}.focused-price span{font-size:14px}.focused small{font-size:12px}.focused-price strong{white-space:normal}
+ .director-copy>p:not(.small-label){font-size:15px}.credentials{font-size:14px}.hygiene-items p{font-size:14px}.faq-list summary{font-size:16px}.faq-list details p{font-size:15px}
+ .visit-info{font-size:14px}.visit-info p:nth-child(2){font-size:13px;max-width:320px}.visit-info small{font-size:12px}.social{font-size:12px}footer p,footer small{font-size:12px}
+ .fixed-bar{display:grid;grid-template-columns:1fr 1.1fr 1.3fr;gap:6px;min-height:82px;padding:10px 10px calc(10px + env(safe-area-inset-bottom))}.fixed-bar>a,.fixed-bar .fixed-primary{font-size:14px;white-space:normal;text-align:center;line-height:1.5;padding:10px 5px;min-width:0;min-height:52px}.fixed-bar>a:nth-of-type(2){margin:0;padding-left:5px;border-left:0}.fixed-bar>p{display:none}
+ .quick>button{padding:15px 9px}.quick>button span{font-size:14px}.quick>div a{font-size:15px}
+}
