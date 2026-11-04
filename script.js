@@ -10,7 +10,7 @@ const motion=matchMedia('(prefers-reduced-motion: reduce)');
 if(!motion.matches&&'IntersectionObserver' in window){document.documentElement.classList.add('js-motion');const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('visible',entry.isIntersecting)),{threshold:.09});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const eventObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('nudge',entry.isIntersecting)),{threshold:.8});eventObserver.observe(document.querySelector('.hero-event'));}
 const heroVideo=document.querySelector('.hero-film');
 const mobileHero=matchMedia('(max-width:760px)');
-function selectHero(){const name=mobileHero.matches?'hero-mobile':'hero-film';heroVideo.poster=name+'.webp';heroVideo.src=name+'.mp4';heroVideo.load();if(!motion.matches)heroVideo.play().catch(()=>{});}
+function selectHero(){const name=mobileHero.matches?'hero-selected-mobile-20261104':'hero-selected-20261104';heroVideo.poster=name+'.webp';heroVideo.src=name+'.mp4';heroVideo.load();if(!motion.matches)heroVideo.play().catch(()=>{});}
 selectHero();mobileHero.addEventListener('change',selectHero);
 const videos=[...document.querySelectorAll('video')];
 const videoObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>entries.forEach(entry=>{if(motion.matches||!entry.isIntersecting)entry.target.pause();else entry.target.play().catch(()=>{});}),{threshold:.1}):null;
