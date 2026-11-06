@@ -99,3 +99,10 @@ body{padding-bottom:94px}
 .hero-film,.hero-poster,.film-card video,.film-card>.motion-poster{filter:sepia(.12) saturate(.85)}
 .hero-shade{background:linear-gradient(180deg,rgba(77,53,32,.32),rgba(77,53,32,.22) 42%,rgba(66,43,25,.48))}
 .film-shade{background:linear-gradient(180deg,rgba(72,48,29,.42),rgba(100,72,47,.20) 38%,rgba(83,55,32,.24) 65%,rgba(59,39,23,.58))}
+
+/* Center the first-visit notice on every viewport. */
+.hero-event{left:24px;right:24px;width:fit-content;max-width:calc(100% - 48px);margin-inline:auto;justify-content:center}
+
+/* Repeat on both scroll directions, with a visible gentle fade under reduced motion. */
+.js-motion .reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{transform:none;transition:opacity .65s ease}.facts.fact-motion .fact-item{transform:none;transition:opacity .5s ease}}

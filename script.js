@@ -7,7 +7,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();documen
 function updateHeader(){header.classList.toggle('scrolled',scrollY>60);}updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
 const quick=document.querySelector('.quick button'),quickLinks=document.querySelector('#quick-links');quick.addEventListener('click',()=>{const open=quick.getAttribute('aria-expanded')!=='true';quick.setAttribute('aria-expanded',String(open));quick.setAttribute('aria-label',open?'빠른 메뉴 닫기':'빠른 메뉴 열기');quickLinks.hidden=!open;});
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
-if('IntersectionObserver' in window){document.documentElement.classList.add('js-motion');const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('visible',entry.isIntersecting)),{threshold:.09});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const eventObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('nudge',entry.isIntersecting)),{threshold:.8});eventObserver.observe(document.querySelector('.hero-event'));}
+if('IntersectionObserver' in window){document.documentElement.classList.add('js-motion');const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const visible=entry.isIntersecting&&entry.intersectionRatio>=.08;entry.target.classList.toggle('visible',visible);if(visible)entry.target.dataset.revealRun=String(Number(entry.target.dataset.revealRun||0)+1);}),{threshold:[0,.08],rootMargin:'-6% 0px -6% 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const eventObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('nudge',entry.isIntersecting)),{threshold:.8});eventObserver.observe(document.querySelector('.hero-event'));}
 const heroVideo=document.querySelector('.hero-film');
 const mobileHero=matchMedia('(max-width:760px)');
 function selectHero(){const name=mobileHero.matches?'hero-unified-mobile-r23':'hero-unified-desktop-r23';heroVideo.poster=name+'.webp';heroVideo.src=name+'.mp4';heroVideo.load();heroVideo.play().catch(()=>{});}
@@ -36,6 +36,6 @@ function enterFacts(){
 }
 if('IntersectionObserver' in window){
  facts.classList.add('fact-motion');
- const factsObserver=new IntersectionObserver(entries=>{for(const entry of entries){factActive=entry.isIntersecting;if(factActive)enterFacts();else{facts.classList.remove('facts-visible');finishFacts();}}},{threshold:.35});factsObserver.observe(facts);
+ const factsObserver=new IntersectionObserver(entries=>{for(const entry of entries){factActive=entry.isIntersecting&&entry.intersectionRatio>=.35;if(factActive)enterFacts();else{facts.classList.remove('facts-visible');finishFacts();}}},{threshold:.35});factsObserver.observe(facts);
 }else facts.classList.add('facts-visible');
 motion.addEventListener('change',()=>{if(factActive)enterFacts();});
