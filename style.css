@@ -106,3 +106,6 @@ body{padding-bottom:94px}
 /* Repeat on both scroll directions, with a visible gentle fade under reduced motion. */
 .js-motion .reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
 @media(prefers-reduced-motion:reduce){.js-motion .reveal{transform:none;transition:opacity .65s ease}.facts.fact-motion .fact-item{transform:none;transition:opacity .5s ease}}
+
+/* Original leg and back photographs: retain complete treatment areas. */
+.balance-photos figure{aspect-ratio:auto}.balance-photos figure img{height:auto;object-fit:contain}
