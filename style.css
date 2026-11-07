@@ -109,3 +109,7 @@ body{padding-bottom:94px}
 
 /* Original leg and back photographs: retain complete treatment areas. */
 .balance-photos figure{aspect-ratio:auto}.balance-photos figure img{height:auto;object-fit:contain}
+
+/* One blended film beneath the program prices. */
+.selected-care-photos.program-care-film{display:block}.program-care-film video{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:0 42px 0 0}
+@media(max-width:760px){.program-care-film video{border-radius:0 24px 0 0}}
