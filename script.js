@@ -10,7 +10,7 @@ const motion=matchMedia('(prefers-reduced-motion: reduce)');
 // Give each section a distinct entrance while reusing the repeatable observer.
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.dataset.motion=['left','right','zoom','unveil'][i%4];});
 document.querySelectorAll('.story-line').forEach((el,i)=>{el.dataset.motion='story';});
-document.querySelectorAll('.story-line,.feature-copy,.program-heading,.director-copy,.films-heading,.visit-content').forEach(el=>{[...el.children].forEach((child,i)=>{child.classList.add('text-motion');child.style.setProperty('--text-delay',Math.min(i*140,420)+'ms');});});
+document.querySelectorAll('.story-line,.feature-copy,.program-heading,.director-copy,.films-heading,.visit-content').forEach(el=>{[...el.children].forEach((child,i)=>{child.classList.add('text-motion');child.style.setProperty('--text-delay',Math.min(i*100,300)+'ms');});});
 
 if('IntersectionObserver' in window){document.documentElement.classList.add('js-motion');const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const visible=entry.isIntersecting&&entry.intersectionRatio>=.08;entry.target.classList.toggle('visible',visible);if(visible)entry.target.dataset.revealRun=String(Number(entry.target.dataset.revealRun||0)+1);}),{threshold:[0,.08],rootMargin:'-6% 0px -6% 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const eventObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('nudge',entry.isIntersecting)),{threshold:.8});eventObserver.observe(document.querySelector('.hero-event'));}
 const heroVideo=document.querySelector('.hero-film');
@@ -35,7 +35,7 @@ function enterFacts(){
  facts.classList.add('facts-visible');
  facts.dataset.countRun=String(Number(facts.dataset.countRun||0)+1);facts.dataset.counting='running';
  cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent='0');
- const start=performance.now()+80,duration=1800;
+ const start=performance.now()+80,duration=1300;
  function tick(now){const progress=Math.min(1,Math.max(0,(now-start)/duration));const eased=1-Math.pow(1-progress,2);factCounters.forEach(el=>el.textContent=formatFact(el,Math.min(Number(el.dataset.countTo),Math.floor(eased*Number(el.dataset.countTo)))));if(progress<1&&factActive)factFrame=requestAnimationFrame(tick);else finishFacts();}
  factFrame=requestAnimationFrame(tick);
 }
