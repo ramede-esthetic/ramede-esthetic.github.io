@@ -132,3 +132,8 @@ body{padding-bottom:94px}
 .visit-info>a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-bottom:1px solid currentColor;font-size:23px;padding:5px 18px}
 @media(max-width:760px){.small-label,.section-no,.story-fine{font-size:11px}.hero-location{font-size:10px}.hero-event>span{font-size:11px}.hero-event small{font-size:13px}.film-top>span{font-size:11px}.film-note{font-size:13px}.program-top{font-size:12px}.price>span,.price small{font-size:14px}.focused small,.visit-info small,footer p,footer small,.social{font-size:13px}.visit-info>a{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.js-motion .reveal[data-motion]{transform:none}.js-motion .story-line:not(.visible) h2{letter-spacing:-.065em}.fixed-bar .fixed-primary{animation:booking-glow 6s ease-in-out infinite}.fixed-bar .fixed-primary:after{animation:none;display:none}}
+
+/* Keep observer bounds intact; reveal the text inside the observed section. */
+.js-motion .reveal[data-motion=unveil]{clip-path:none}
+.js-motion .reveal[data-motion=unveil]>.text-motion{clip-path:inset(0 100% 0 0);transition:opacity .65s ease var(--text-delay),clip-path .8s ease var(--text-delay)}
+.js-motion .reveal[data-motion=unveil].visible>.text-motion{clip-path:inset(0)}
