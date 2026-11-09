@@ -159,3 +159,28 @@ h2,.logo,.hero-wordmark,.story-line h2,.film-top h3,.facts>div>span,.fact-value,
 .brand-promise h2{font-family:'Noto Sans KR',sans-serif}
 .logo,.hero-wordmark{letter-spacing:-.04em}.story-line h2{letter-spacing:-.045em}
 @media(max-width:760px){.site-header nav a,.site-header nav.open a{font-family:'DM Serif Display','Noto Sans KR',serif}.story-line h2{font-size:clamp(47px,12vw,78px)}.hero-wordmark{font-size:clamp(70px,20vw,108px)}}
+
+/* Chosen Option 03: one calm serif family for English and Korean. */
+body,button,input,summary,h1,h2,h3,h4,.logo,.logo span,.hero-wordmark,.hero-location,.hero-submark,.story-line h2,.brand-promise h2,.film-top h3,.facts>div>span,.fact-value,.fact-unit,.program-number,.duration,.prices strong,.focused-price strong,.hygiene-items span,.visit-info>a,.site-header nav a,.site-header nav.open a{font-family:'Noto Serif KR','AppleMyungjo',serif}
+h2,.logo,.hero-wordmark,.story-line h2,.film-top h3{font-weight:400}
+/* One restrained tempo across every section, including the facts. */
+.js-motion .reveal,.js-motion .reveal[data-motion],.js-motion .story-line.reveal[data-motion=story]{transition:opacity 1.6s ease-in-out,transform 1.8s ease-in-out;clip-path:none}
+.js-motion .reveal[data-motion=left]{transform:translateX(-10px)}
+.js-motion .reveal[data-motion=right]{transform:translateX(10px)}
+.js-motion .reveal[data-motion=zoom]{transform:scale(.985)}
+.js-motion .reveal[data-motion=story],.js-motion .reveal[data-motion=unveil]{transform:none}
+.js-motion .reveal[data-motion].visible{transform:none}
+.js-motion .reveal .text-motion,.js-motion .story-line[data-motion=story]>.text-motion{transition:opacity 1.6s ease-in-out var(--text-delay),filter 1.8s ease-in-out var(--text-delay),letter-spacing 1.8s ease-in-out var(--text-delay)}
+.js-motion .reveal[data-motion=unveil]>.text-motion{transition:opacity 1.6s ease-in-out var(--text-delay),clip-path 1.8s ease-in-out var(--text-delay)}
+.facts.fact-motion .fact-item{transition:opacity 1.6s ease-in-out,transform 1.8s ease-in-out;transition-delay:calc(var(--fact-order)*.16s);transform:translateY(10px)}
+.facts.fact-motion.facts-visible .fact-item{transform:none}
+.facts.fact-motion .fact-item>p{transition:opacity 1.6s ease-in-out,transform 1.8s ease-in-out;transition-delay:calc(var(--fact-order)*.16s + .15s)}
+.facts.fact-motion .fact-value{transition:clip-path 1.8s ease-in-out,transform 1.8s ease-in-out;transition-delay:calc(var(--fact-order)*.16s)}
+.hero-event.nudge{animation:event-soft 7s ease-in-out infinite}
+@keyframes event-soft{0%,100%{opacity:.88}50%{opacity:1}}
+.fixed-bar .fixed-primary{animation:booking-soft 9s ease-in-out infinite}
+@keyframes booking-soft{0%,100%{box-shadow:0 0 0 0 #ad8c6800}50%{box-shadow:0 0 0 4px #ad8c6826}}
+.fixed-bar .fixed-primary:after{animation:booking-light 11s ease-in-out infinite}
+.scroll-cue i:after{animation-duration:5s}.film-card video{transition:transform 2s ease-in-out}.program-care-film>video{transition:opacity 1.2s ease-in-out}
+.site-header{transition:background .7s ease,padding .7s ease,backdrop-filter .7s ease}.outline-link{transition:background .65s ease}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal[data-motion],.facts.fact-motion .fact-item{transform:none}.js-motion .reveal[data-motion=unveil]>.text-motion{clip-path:none}.fixed-bar .fixed-primary:after{display:none;animation:none}.hero-event.nudge{animation:none}}
