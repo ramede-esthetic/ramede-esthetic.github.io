@@ -152,3 +152,10 @@ body{padding-bottom:94px}
 .js-motion .story-line[data-motion=story]:not(.visible) h2{letter-spacing:-.035em}
 .js-motion .story-line[data-motion=story].visible h2{letter-spacing:-.065em}
 @media(prefers-reduced-motion:reduce){.js-motion .story-line[data-motion=story]>.text-motion{filter:none}.js-motion .story-line[data-motion=story]:not(.visible) h2{letter-spacing:-.065em}}
+
+/* Chosen typography: Option 02, DM Serif Display with Noto Sans KR. */
+body,button,input,summary,.brand-promise h2,.visit-info>a{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif}
+h2,.logo,.hero-wordmark,.story-line h2,.film-top h3,.facts>div>span,.fact-value,.program-number,.duration,.prices strong,.focused-price strong,.hygiene-items span{font-family:'DM Serif Display','Noto Sans KR',serif;font-weight:400}
+.brand-promise h2{font-family:'Noto Sans KR',sans-serif}
+.logo,.hero-wordmark{letter-spacing:-.04em}.story-line h2{letter-spacing:-.045em}
+@media(max-width:760px){.site-header nav a,.site-header nav.open a{font-family:'DM Serif Display','Noto Sans KR',serif}.story-line h2{font-size:clamp(47px,12vw,78px)}.hero-wordmark{font-size:clamp(70px,20vw,108px)}}
