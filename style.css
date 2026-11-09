@@ -184,3 +184,19 @@ h2,.logo,.hero-wordmark,.story-line h2,.film-top h3{font-weight:400}
 .scroll-cue i:after{animation-duration:5s}.film-card video{transition:transform 2s ease-in-out}.program-care-film>video{transition:opacity 1.2s ease-in-out}
 .site-header{transition:background .7s ease,padding .7s ease,backdrop-filter .7s ease}.outline-link{transition:background .65s ease}
 @media(prefers-reduced-motion:reduce){.js-motion .reveal[data-motion],.facts.fact-motion .fact-item{transform:none}.js-motion .reveal[data-motion=unveil]>.text-motion{clip-path:none}.fixed-bar .fixed-primary:after{display:none;animation:none}.hero-event.nudge{animation:none}}
+
+/* Match both original care photographs to the same frame. */
+.balance-photos{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.balance-photos figure{aspect-ratio:4/5;height:auto;position:relative}
+.balance-photos figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.balance-photos figure:first-child img{object-position:65% 52%}
+.balance-photos figure:last-child img{object-position:50% 42%}
+
+/* Quick consultation belongs beside the header menu. */
+.site-header .quick{position:relative;inset:auto;top:auto;right:auto;transform:none;border-radius:0;background:transparent;color:inherit;z-index:42;flex-shrink:0}
+.site-header .quick>button{writing-mode:horizontal-tb;display:flex;align-items:center;justify-content:center;padding:7px 19px;min-height:42px;border:1px solid #ffffff8c;border-radius:28px;background:transparent;color:inherit;gap:0}
+.site-header .quick>button span{font-size:15px;writing-mode:horizontal-tb;letter-spacing:0}
+.site-header .quick>div{position:absolute;top:calc(100% + 16px);right:0;left:auto;bottom:auto;width:170px;padding:16px 20px;background:#f7f1e7;color:#57412f;border:1px solid #cdbfae;border-radius:12px;box-shadow:0 10px 30px #49382c22}
+.site-header .quick>div a{display:block;white-space:nowrap;min-height:40px;font-size:14px}
+@media(max-width:1100px){.site-header .quick{margin-left:auto}}
+@media(max-width:760px){.site-header{gap:18px}.site-header .quick>button{padding:6px 16px;min-height:38px}.site-header .quick>button span{font-size:14px}}
