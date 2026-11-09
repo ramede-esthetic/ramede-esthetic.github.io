@@ -9,7 +9,7 @@ const quick=document.querySelector('.quick button'),quickLinks=document.querySel
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
 // Give each section a distinct entrance while reusing the repeatable observer.
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.dataset.motion=['left','right','zoom','unveil'][i%4];});
-document.querySelectorAll('.story-line').forEach((el,i)=>{el.dataset.motion=i?'unveil':'zoom';});
+document.querySelectorAll('.story-line').forEach((el,i)=>{el.dataset.motion='story';});
 document.querySelectorAll('.story-line,.feature-copy,.program-heading,.director-copy,.films-heading,.visit-content').forEach(el=>{[...el.children].forEach((child,i)=>{child.classList.add('text-motion');child.style.setProperty('--text-delay',Math.min(i*75,225)+'ms');});});
 
 if('IntersectionObserver' in window){document.documentElement.classList.add('js-motion');const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const visible=entry.isIntersecting&&entry.intersectionRatio>=.08;entry.target.classList.toggle('visible',visible);if(visible)entry.target.dataset.revealRun=String(Number(entry.target.dataset.revealRun||0)+1);}),{threshold:[0,.08],rootMargin:'-6% 0px -6% 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const eventObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('nudge',entry.isIntersecting)),{threshold:.8});eventObserver.observe(document.querySelector('.hero-event'));}
