@@ -44,3 +44,7 @@ if('IntersectionObserver' in window){
  const factsObserver=new IntersectionObserver(entries=>{for(const entry of entries){factActive=entry.isIntersecting&&entry.intersectionRatio>=.35;if(factActive)enterFacts();else{facts.classList.remove('facts-visible');finishFacts();}}},{threshold:.35});factsObserver.observe(facts);
 }else facts.classList.add('facts-visible');
 motion.addEventListener('change',()=>{if(factActive)enterFacts();});
+
+// Keep a visible JPEG until the inline video actually starts on mobile browsers.
+const programFilm=document.querySelector('.program-care-film video');
+if(programFilm){programFilm.addEventListener('playing',()=>programFilm.classList.add('is-playing'));programFilm.addEventListener('error',()=>programFilm.classList.remove('is-playing'));programFilm.addEventListener('loadeddata',playVisibleVideos);window.addEventListener('pageshow',playVisibleVideos);}
