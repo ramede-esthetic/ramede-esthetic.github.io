@@ -33,7 +33,7 @@ function formatFact(el,value){return el.dataset.countFormat?new Intl.NumberForma
 function finishFacts(){facts.dataset.counting='complete';cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent=formatFact(el,Number(el.dataset.countTo)));}
 function enterFacts(){
  facts.classList.add('facts-visible');
- facts.dataset.countRun=String(Number(facts.dataset.countRun||0)+1);facts.dataset.counting='running';
+ facts.dataset.countRun=String(Number(facts.dataset.countRun||0)+1);if(motion.matches){finishFacts();return;}facts.dataset.counting='running';
  cancelAnimationFrame(factFrame);factCounters.forEach(el=>el.textContent='0');
  const start=performance.now()+80,duration=1300;
  function tick(now){const progress=Math.min(1,Math.max(0,(now-start)/duration));const eased=1-Math.pow(1-progress,2);factCounters.forEach(el=>el.textContent=formatFact(el,Math.min(Number(el.dataset.countTo),Math.floor(eased*Number(el.dataset.countTo)))));if(progress<1&&factActive)factFrame=requestAnimationFrame(tick);else finishFacts();}
@@ -48,3 +48,5 @@ motion.addEventListener('change',()=>{if(factActive)enterFacts();});
 // Keep a visible JPEG until the inline video actually starts on mobile browsers.
 const programFilm=document.querySelector('.program-care-film video');
 if(programFilm){programFilm.addEventListener('playing',()=>programFilm.classList.add('is-playing'));programFilm.addEventListener('error',()=>programFilm.classList.remove('is-playing'));programFilm.addEventListener('loadeddata',playVisibleVideos);window.addEventListener('pageshow',playVisibleVideos);}
+
+heroVideo.addEventListener('playing',()=>heroVideo.classList.add('is-playing'));heroVideo.addEventListener('error',()=>heroVideo.classList.remove('is-playing'));if(!heroVideo.paused&&heroVideo.readyState>=3)heroVideo.classList.add('is-playing');
