@@ -66,3 +66,17 @@
 .home-story:before,.home-program:before,.page-cta:before,.page-heading:before{content:'';position:absolute;inset:0;background:url('brand-wave.jpeg') center/cover no-repeat;opacity:.28;z-index:-2;pointer-events:none}
 .home-story:after,.home-program:after,.page-cta:after,.page-heading:after{content:'';position:absolute;inset:0;background:#3f2a1d;opacity:.35;z-index:-1;pointer-events:none}
 .site-header.scrolled{background:#604735f2}
+
+/* r54: centered facts and consistent rounded calls to action */
+.fact-item p{text-align:center;width:100%;margin-left:auto;margin-right:auto;white-space:normal;overflow-wrap:normal;word-break:keep-all}
+.underlined.brown-pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:15px 30px;background:#604735;color:#fff8ec;border:1px solid #9f8468;border-radius:999px;font-size:18px;line-height:1.5;text-decoration:none;gap:0}
+.underlined.brown-pill:after{display:none}
+.gentle-bounce{animation:ramede-gentle-bounce 1.8s ease-in-out infinite!important}
+@keyframes ramede-gentle-bounce{0%,18%,60%,100%{transform:translateY(0)}33%{transform:translateY(-3px)}45%{transform:translateY(0)}53%{transform:translateY(-1px)}}
+.home-story>a[href="#director"]{justify-content:center;gap:0;min-width:130px}
+.reservation-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+.contact-naver{background:#e4d9c8;color:#392c23}
+.contact-choice h2{font-size:clamp(26px,2.4vw,40px);line-height:1.5;word-break:keep-all}
+.contact-action{justify-content:flex-start}
+.fixed-bar>a{white-space:nowrap}
+@media(max-width:760px){.facts .fact-item p{font-size:11px;line-height:1.8;padding:0 7px;box-sizing:border-box;max-width:100%;text-align:center}.facts .fact-item:first-child p{max-width:126px}.underlined.brown-pill{font-size:17px;padding:14px 25px;min-height:52px}.reservation-options{grid-template-columns:1fr}.fixed-bar>a{font-size:12px!important;padding:15px 4px!important;letter-spacing:-.04em}.fixed-bar{grid-template-columns:1fr 1.35fr .7fr!important}.contact-choice h2{font-size:29px}}
