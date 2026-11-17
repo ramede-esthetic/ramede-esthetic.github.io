@@ -80,3 +80,17 @@
 .contact-action{justify-content:flex-start}
 .fixed-bar>a{white-space:nowrap}
 @media(max-width:760px){.facts .fact-item p{font-size:11px;line-height:1.8;padding:0 7px;box-sizing:border-box;max-width:100%;text-align:center}.facts .fact-item:first-child p{max-width:126px}.underlined.brown-pill{font-size:17px;padding:14px 25px;min-height:52px}.reservation-options{grid-template-columns:1fr}.fixed-bar>a{font-size:12px!important;padding:15px 4px!important;letter-spacing:-.04em}.fixed-bar{grid-template-columns:1fr 1.35fr .7fr!important}.contact-choice h2{font-size:29px}}
+
+/* r55: equal footer actions and compact location-to-contact spacing */
+#location{padding-bottom:22px}#location+.reservation-options{padding-top:22px}
+.fixed-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px;padding:12px 3.5vw;min-height:76px}
+.fixed-bar>p{display:none}
+.fixed-bar>a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:48px;margin:0;padding:12px 10px;box-sizing:border-box;background:#604735;color:#fff8ec;border:1px solid #80654e;font-size:15px;text-align:center;line-height:1.4;white-space:nowrap}
+.fixed-bar>a:nth-of-type(2){background:#e9dfd0;color:#49382c;border-color:#d4c5b2}
+.fixed-bar>a:after{display:none}
+@media(max-width:760px){#location{padding-bottom:10px}#location+.reservation-options{padding-top:10px}.fixed-bar{gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));min-height:70px}.fixed-bar>a{font-size:14px!important;padding:12px 5px!important;min-height:46px;letter-spacing:0}}
+
+/* r56: portrait treatment photography, per owner request */
+.balance-photos{grid-template-columns:1fr 1fr;align-items:stretch}.balance-photos figure{margin:0!important;aspect-ratio:3/4}.balance-photos figure img,.balance-photos figure:first-child img,.balance-photos figure:last-child img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;object-position:center}
+.category-grid .care-category{aspect-ratio:3/4;min-height:0}.category-grid .care-category>img{width:100%;height:100%;object-fit:cover;object-position:center}.category-grid .care-category:nth-child(2)>img{object-position:42% center}.category-grid .care-category:nth-child(4)>img{object-position:37% center}
+@media(max-width:760px){.category-grid .care-category{aspect-ratio:3/4;min-height:0}.balance-photos figure{aspect-ratio:3/4}}
